@@ -9,6 +9,9 @@ import { AboutComponent } from './components/about/about.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { HeroeComponent } from './components/heroe/heroe.component';
+import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './components/search/search.component';
+import { HeroCardComponent } from './components/hero-card/hero-card.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,14 @@ import { HeroeComponent } from './components/heroe/heroe.component';
     AboutComponent,
     HeroesComponent,
     FooterComponent,
-    HeroeComponent
+    HeroeComponent,
+    SearchComponent,
+    HeroCardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

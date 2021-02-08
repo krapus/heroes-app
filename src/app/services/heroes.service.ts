@@ -12,7 +12,23 @@ export class HeroesService {
     return HEROES;
   }
 
-  getHero(id: number): Heroe {
-    return HEROES[id];
+  getHero(id: number) {
+    return HEROES.find((hero) => {
+      return hero.idx == id;
+    });    
+  }
+
+  searchHeroes(pattern: string): Heroe[] {
+    let heroes: Heroe[] = [];
+    pattern = pattern.toLowerCase();
+
+    for (const heroe of HEROES) {
+      let name = heroe.nombre.toLowerCase();
+      if (name.indexOf(pattern) >= 0) {
+        heroes.push(heroe);
+      }
+    }
+
+    return heroes;
   }
 }
